@@ -3,5 +3,5 @@
 @section('title', 'Berita dan Promo')
 
 @section('content')
- <p>wawan</p>
+ <p>wiwin</p>
 @endsection
