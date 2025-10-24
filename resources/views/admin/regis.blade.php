@@ -25,54 +25,48 @@
 
             <div class="justify-center items-center w-full card lg:flex max-w-md ">
                 <div class=" w-full card-body">
-                    <a href="../" class="py-4 block"><img src="../template/assets/images/logos/logo-light.svg"
+                    <a href="{{ route(regis.save) }}" class="py-4 block"><img src="../template/assets/images/logos/logo-light.svg"
                             alt="" class="mx-auto" /></a>
                     <p class="mb-4 text-gray-400 text-sm text-center">Your Social Campaigns</p>
                     <!-- form -->
                     <form>
                         <!-- username -->
-                        <div class="flex justify-between">
+                     
                             <div class="mb-4">
-                                <label for="forName" class="block text-sm  mb-2 text-gray-400">Nama Depan</label>
+                                <label for="forName" class="block text-sm  mb-2 text-gray-400">Nama</label>
                                 <input type="text" id="forName"
                                     class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                    aria-describedby="hs-input-helper-text">
+                                    aria-describedby="hs-input-helper-text" name="nama">
                             </div>
-                            <div class="mb-4">
-                                <label for="forName" class="block text-sm  mb-2 text-gray-400">Nama Belakang</label>
-                                <input type="text" id="forName"
-                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                    aria-describedby="hs-input-helper-text">
-                            </div>
-                        </div>
+                  
 
                         <!-- Email -->
                         <div class="mb-4">
                             <label for="forEmail" class="block text-sm  mb-2 text-gray-400">Email</label>
                             <input type="email" id="forEmail"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text">
+                                aria-describedby="hs-input-helper-text" name="email">
                         </div>
                           <!-- Nomor -->
                         <div class="mb-4">
-                            <label for="forEmail" class="block text-sm  mb-2 text-gray-400">Nomor</label>
+                            <label for="forEmail" class="block text-sm  mb-2 text-gray-400">Nomor Hp</label>
                             <input type="email" id="forEmail"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text">
+                                aria-describedby="hs-input-helper-text" name="no_hp">
                         </div>
                         <!-- password -->
                         <div class="mb-4">
                             <label for="forPassword" class="block text-sm  mb-2 text-gray-400">Password</label>
                             <input type="password" id="forPassword"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text">
+                                aria-describedby="hs-input-helper-text" name="password">
                         </div>
                           <!-- Confirm Password -->
                         <div class="mb-4">
                             <label for="forPassword" class="block text-sm  mb-2 text-gray-400">Confirm Password</label>
                             <input type="password" id="forPassword"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text">
+                                aria-describedby="hs-input-helper-text" name="password_confirmation">
                         </div>
 
                         <!-- button -->
@@ -82,9 +76,9 @@
                         </div>
 
                         <div class="flex justify-center gap-2 items-center">
-                            <p class="text-base font-semibold text-gray-400">Already have an Account?</p>
+                            <p class="text-base font-semibold text-gray-400">Sudah Punya Akun?</p>
                             <a href="./authentication-login.html"
-                                class="text-sm font-semibold text-blue-600 hover:text-blue-700">Sign In</a>
+                                class="text-sm font-semibold text-blue-600 hover:text-blue-700">Login</a>
                         </div>
                 </div>
                 </form>
