@@ -16,7 +16,7 @@ class ProductController extends Controller
        $product = Product::all();
 
         // Kirim ke view
-        return view('costumer.product', ['product' => $product]);  
+        return view('admin.login', ['product' => $product]);  
     }
       public function detail($kode_product)
     {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BeritaPromoController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -12,3 +13,4 @@ Route::get('/product/kategori/{kategori}', [ProductController::class, 'kategori'
 Route::get('/detail/{kode_product}', [ProductController::class, 'detail'])->name('detail');
 Route::match(['get', 'post'],'/simpan/keranjang/', [ProductController::class, 'keranjang'])->name('simpan.keranjang');
 Route::get('/beritapromo', [BeritaPromoController::class, 'index'])->name('beritapromo');
+Route::get('/regis', [HomeController::class, 'index'])->name('regis');
