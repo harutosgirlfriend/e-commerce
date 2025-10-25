@@ -4,4 +4,4 @@ import 'simplebar';
 import 'iconify-icon';
 import '@preline/dropdown';
 import '@preline/overlay';
-import './sidebarmenu';
+

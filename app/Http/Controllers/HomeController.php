@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 class HomeController extends Controller
@@ -41,23 +42,38 @@ class HomeController extends Controller
         'nama'=>$request->nama,
         'email'=>$request->email,
         'password'=>Hash::make($request->password),
-        'no_hp'=>$request->no_hp
+        'no_hp'=>$request->no_hp,
+        'role'=>'admin'
     ]);
 return view('admin.login');
     }
 
     public function login(Request $request){
 
+        $credentials = $request->only('email', 'password');
 
+        if (Auth::attempt($credentials)) {
+        // Pengguna berhasil login (Auth sudah terisi)
 
-        $users = Users::where('email', $request->email)->first();
-        if($users){
-         return Hash::check($request->password, $users->password)? view('costumer.product'): redirect()->back()->withErrors('password salah');
+        // Gunakan intended() untuk mengarahkan ke URL yang diinginkan sebelumnya,
+        // atau ke /home jika tidak ada
+        $request->session()->regenerate();
+        
+        return redirect()->intended('/cekrole'); // Laravel akan secara otomatis tahu user mana yang login
 
-        }
-        else{
-            return redirect()->back()->withErrors('email tidak ditemukan');
-        }
+    } else {
+        // Login gagal (email tidak ditemukan atau password salah)
+        return redirect()->back()->withErrors('Kredensial tidak valid');
+    }
+
+        // $users = Users::where('email', $request->email)->first();
+        // if($users){
+        //  return Hash::check($request->password, $users->password)? view('costumer.product'): redirect()->back()->withErrors('password salah');
+
+        // }
+        // else{
+        //     return redirect()->back()->withErrors('email tidak ditemukan');
+        // }
      
     
     }
