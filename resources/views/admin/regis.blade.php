@@ -72,7 +72,7 @@
                         <!-- button -->
                         <div class="grid my-6">
                             <a href="../"
-                                class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700">Sign Up</a>
+                                class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700">registrasi</a>
                         </div>
 
                         <div class="flex justify-center gap-2 items-center">
