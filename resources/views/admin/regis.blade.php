@@ -25,18 +25,21 @@
 
             <div class="justify-center items-center w-full card lg:flex max-w-md ">
                 <div class=" w-full card-body">
-                    <a href="{{ route(regis.save) }}" class="py-4 block"><img src="../template/assets/images/logos/logo-light.svg"
+                    <a href="" class="py-4 block"><img src="../template/assets/images/logos/logo-light.svg"
                             alt="" class="mx-auto" /></a>
                     <p class="mb-4 text-gray-400 text-sm text-center">Your Social Campaigns</p>
                     <!-- form -->
-                    <form>
+                    <form action="{{ route('regis.save') }}">
                         <!-- username -->
                      
                             <div class="mb-4">
                                 <label for="forName" class="block text-sm  mb-2 text-gray-400">Nama</label>
                                 <input type="text" id="forName"
                                     class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                    aria-describedby="hs-input-helper-text" name="nama">
+                                    aria-describedby="hs-input-helper-text" name="nama" value="{{ old('nama') }}">
+                                    @error('nama')
+                                    <p class="text-red-500 text-sm-mt-1">{{ $message }}</p>
+                                    @enderror
                             </div>
                   
 
@@ -45,21 +48,30 @@
                             <label for="forEmail" class="block text-sm  mb-2 text-gray-400">Email</label>
                             <input type="email" id="forEmail"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text" name="email">
+                                aria-describedby="hs-input-helper-text" name="email" value="{{ old('email') }}">
+                                  @error('email')
+                                    <p class="text-red-500 text-sm-mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
                           <!-- Nomor -->
                         <div class="mb-4">
                             <label for="forEmail" class="block text-sm  mb-2 text-gray-400">Nomor Hp</label>
-                            <input type="email" id="forEmail"
+                            <input type="text" id="forEmail"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text" name="no_hp">
+                                aria-describedby="hs-input-helper-text" name="no_hp" value="{{ old('no_hp') }}">
+                                  @error('no_hp')
+                                    <p class="text-red-500 text-sm-mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
                         <!-- password -->
                         <div class="mb-4">
                             <label for="forPassword" class="block text-sm  mb-2 text-gray-400">Password</label>
                             <input type="password" id="forPassword"
                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                aria-describedby="hs-input-helper-text" name="password">
+                                aria-describedby="hs-input-helper-text" name="password" value="{{ old('password') }}">
+                                  @error('password')
+                                    <p class="text-red-500 text-sm-mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
                           <!-- Confirm Password -->
                         <div class="mb-4">
@@ -71,13 +83,13 @@
 
                         <!-- button -->
                         <div class="grid my-6">
-                            <a href="../"
-                                class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700">registrasi</a>
+                            <button type="submit"
+                                class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700">registrasi</button>
                         </div>
 
                         <div class="flex justify-center gap-2 items-center">
                             <p class="text-base font-semibold text-gray-400">Sudah Punya Akun?</p>
-                            <a href="./authentication-login.html"
+                            <a href="{{ route('login.view') }}"
                                 class="text-sm font-semibold text-blue-600 hover:text-blue-700">Login</a>
                         </div>
                 </div>

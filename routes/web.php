@@ -14,4 +14,6 @@ Route::get('/detail/{kode_product}', [ProductController::class, 'detail'])->name
 Route::match(['get', 'post'],'/simpan/keranjang/', [ProductController::class, 'keranjang'])->name('simpan.keranjang');
 Route::get('/beritapromo', [BeritaPromoController::class, 'index'])->name('beritapromo');
 Route::get('/regis', [HomeController::class, 'index'])->name('regis');
-Route::get('/regisSave', [HomeController::class, 'regis'])->name('regis.save');
+Route::get('/regis/save', [HomeController::class, 'regis'])->name('regis.save');
+Route::get('/login/view', [HomeController::class, 'loginView'])->name('login.view');
+Route::get('/login', [HomeController::class, 'login'])->name('login');

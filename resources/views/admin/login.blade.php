@@ -27,20 +27,20 @@
                                 <a href="../" class="py-4 block"><img src="../template/assets/images/logos/logo-light.svg" alt="" class="mx-auto"/></a>
                                 <p class="mb-4 text-gray-400 text-sm text-center">Masuk ke akunmu</p>
                             <!-- form -->
-                            <form>
+                            <form action="{{ route('login') }}">
                                 <!-- username -->
                                 <div class="mb-4">
                                     <label for="forUsername"
-                                    class="block text-sm mb-2 text-gray-400">Username</label>
-                                <input type="text" id="forUsername"
-                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 " aria-describedby="hs-input-helper-text">
+                                    class="block text-sm mb-2 text-gray-400">Email</label>
+                                <input type="email" id="forUsername"
+                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 " aria-describedby="hs-input-helper-text" name="email">
                                 </div>
                                 <!-- password -->
                                 <div class="mb-6">
                                     <label for="forPassword"
                                     class="block text-sm  mb-2 text-gray-400">Password</label>
                                 <input type="password" id="forPassword"
-                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 " aria-describedby="hs-input-helper-text">
+                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 " aria-describedby="hs-input-helper-text" name="password">
                                 </div>
                                 <!-- checkbox -->
                                   <div class="flex justify-between">
@@ -52,7 +52,7 @@
                                   </div>
                                     <!-- button -->
                                       <div class="grid my-6">
-                                        <a href="../" class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700">Masuk</a>
+                                        <button class="btn py-[10px] text-base text-white font-medium hover:bg-blue-700" type="submit">Masuk</button>
                                       </div>
         
                                     <div class="flex justify-center gap-2 items-center">

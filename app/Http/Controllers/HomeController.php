@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Users;
+use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
@@ -17,28 +19,50 @@ class HomeController extends Controller
 
 
     public function regis(Request $request ){
-$validation = $request->validate(
+    $validation = $request->validate(
 [
-    'email' => 'required|email|unique:users.email',
-    'nama' => 'required|string',
-    'password'=> 'required|min:8|confirmed'
-],
+    'email' => 'unique:users,email',
+    'nama' => 'string',
+    'password'=> 'min:8|confirmed',
+    'no_hp'=> 'numeric|digits_between:12,13'
+        ],
 [
-    'name.required'=> 'Nama wajib diisi',
-    'email.required'=>'Email wajib diisi',
-    'email.email'=>'Format email tidak valid',
     'email.unique'=>'Email sudah terdaftar, silahkan gunakan email lain',
     'password.required' => 'Password waib diisi',
     'password.min'=> 'Password minimal 8 karakter',
-    'password.confirm'=>'Konfirmasi Kata sandi tidak cocok'
+    'password.confirm'=>'Konfirmasi Kata sandi tidak cocok',
+    'no_hp.numeric'=> 'harus berisi nomor',
+    'no_hp.digits_between' => 'Nomor HP harus berisi antara 12 sampai 13 angka.',
+
     ]);
 
-    
+
     Users::create([
-        'name'=>$request->name,
+        'nama'=>$request->nama,
         'email'=>$request->email,
-        'password'=>$request->password
+        'password'=>Hash::make($request->password),
+        'no_hp'=>$request->no_hp
     ]);
-
+return view('admin.login');
     }
+
+    public function login(Request $request){
+
+
+
+        $users = Users::where('email', $request->email)->first();
+        if($users){
+         return Hash::check($request->password, $users->password)? view('costumer.product'): redirect()->back()->withErrors('password salah');
+
+        }
+        else{
+            return redirect()->back()->withErrors('email tidak ditemukan');
+        }
+     
+    
+    }
+    public function loginView(){
+  return view('admin.login');
+    }
+ 
 }
