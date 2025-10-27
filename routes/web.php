@@ -20,11 +20,8 @@ Route::get('/regis/save', [HomeController::class, 'regis'])->name('regis.save');
 Route::get('/login/view', [HomeController::class, 'loginView'])->name('login.view');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-Route::middleware(['auth', 'role.redirect'])->group(function () {
+Route::get('/regis/akun', [AdminController::class, 'registrasi'])->name('regisAkun');
 
-    Route::get('/cekrole', function () {
-       
-        return view('admin.template'); 
-        
-    })->name('cekrole');
+Route::middleware(['auth', 'role.redirect'])->group(function () {
+Route::get('/cekrole', function () {return view('admin.template'); })->name('cekrole');
 });

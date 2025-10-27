@@ -1,10 +1,10 @@
 @extends('template')
 
-@section('title', 'Berita dan Promo')
+@section('title', 'Registrasi Akun')
 
 @section('content')
 
- <p>winda</p>
+
 @endsection
 
  

@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-           public function dashboard()
+public function dashboard()
     {
-  
-
-        // Kirim ke view
-        return view('admin.template');  
+        return view('templateAdmin');  
+    }
+    public function registrasi(){
+        return view('admin.registrasiAkun');
     }
 }

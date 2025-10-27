@@ -43,7 +43,7 @@ class HomeController extends Controller
         'email'=>$request->email,
         'password'=>Hash::make($request->password),
         'no_hp'=>$request->no_hp,
-        'role'=>'admin'
+        'role'=>'customer'
     ]);
 return view('admin.login');
     }
