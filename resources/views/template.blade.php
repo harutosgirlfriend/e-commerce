@@ -46,14 +46,14 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                             <a href="#" aria-current="page"
                                 class="rounded-md tombol px-3 py-2 text-sm font-medium ">Dashboard</a>
-                            <a href="{{ route('product') }}"
-                                class="rounded-md tombol px-3 py-2 text-sm font-medium  text-gray-800 hover:text-white">Produk</a>
+                            <a href="{{ route('product') }}"  
+                                class="rounded-md tombol px-3 py-2 text-sm font-medium {{ request()->routeIs('product') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }}">Produk</a>
 
                             <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
 
                             <el-dropdown class="inline-block">
                                 <button
-                                    class="tombol px-3 py-2 inline-flex justify-center text-sm rounded-md font-medium text-gray-800 hover:text-white">
+                                    class="tombol px-3 py-2 inline-flex justify-center text-sm rounded-md font-medium {{ request()->routeIs('product.kategori') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }} hover:text-white">
                                     Kategori
                                     <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
                                         class="-mr-1 size-5 text-gray-400 tombol">
@@ -67,7 +67,7 @@
                                     class="w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
                                     <div class="py-1">
                                         <a href="{{ route('product.kategori', ['kategori' => 'ayam hidup']) }}"
-                                            class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
+                                          class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
                                             Hidup</a>
                                         <a href="{{ route('product.kategori', ['kategori' => 'ayam potong']) }}"
                                             class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
@@ -82,7 +82,7 @@
 
 
                             <a href="{{ route('beritapromo') }}"
-                                class="rounded-md tombol px-3 py-2 text-sm font-medium text-gray-800 hover:bg-white/5 hover:text-white">Berita
+                                class="rounded-md tombol px-3 py-2 text-sm font-medium {{ request()->routeIs('beritapromo') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }} hover:bg-white/5 hover:text-white">Berita
                                 & Promo</a>
                         </div>
                     </div>
@@ -275,9 +275,10 @@
     </dialog>
   </el-dialog> --}}
 
+ 
 
 
-    <script src="{{ asset('js/script.js') }}"></script>
+    {{-- <script src="{{ asset('js/script.js') }}"></script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 

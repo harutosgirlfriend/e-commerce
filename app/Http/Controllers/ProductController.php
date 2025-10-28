@@ -47,4 +47,11 @@ class ProductController extends Controller
         return redirect()->back();
           
     }
+    public function dataProduct(){
+      $product = Product::all();
+
+        // Kirim ke view
+        return view('admin.dataproduct', ['products' => $product]);  
+  
+    }
 }

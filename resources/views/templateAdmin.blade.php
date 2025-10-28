@@ -41,9 +41,9 @@
                         <i data-feather="feather"></i>
                     </li>
                     <li class="pc-item pc-hasmenu">
-                        <a href="../elements/bc_color.html" class="pc-link">
+                        <a href="{{ route('data.product') }}" class="pc-link">
                             <span class="pc-micon"> <i data-feather="edit"></i></span>
-                            <span class="pc-mtext">Color</span>
+                            <span class="pc-mtext">Data Product</span>
                         </a>
                     </li>
                     <li class="pc-item pc-hasmenu">
@@ -425,7 +425,7 @@
             <!-- [ breadcrumb ] end -->
 
             <!-- [ Main Content ] start -->
-            <div class="grid grid-cols-1 gap-x-0">
+            <div class="grid grid-cols-1 gap-x-0 min-w-full">
 
                 @yield('content')
 

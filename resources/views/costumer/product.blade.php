@@ -15,7 +15,8 @@
                     <ul>
 
                         <li class="px-2 py-3">{{ $p->nama_product }}</li>
-                        <li class="px-2 py-3">{{ $p->kode_product }}</li>
+                     
+                        <li class="px-2 py-3">Stok {{ $p->stok }}</li>
 
                     </ul>
                 </div>
@@ -24,6 +25,10 @@
 
 
     </div>
+
+
+
+
 
 
 @endsection

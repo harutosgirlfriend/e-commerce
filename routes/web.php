@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [ProductController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/data/product', [ProductController::class, 'dataProduct'])->name('data.product');
 Route::get('/product/kategori/{kategori}', [ProductController::class, 'kategori'])->name('product.kategori');
 Route::get('/detail/{kode_product}', [ProductController::class, 'detail'])->name('detail');
 Route::match(['get', 'post'],'/simpan/keranjang/', [ProductController::class, 'keranjang'])->name('simpan.keranjang');

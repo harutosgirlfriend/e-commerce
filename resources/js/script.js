@@ -14,20 +14,20 @@ keranjang.addEventListener("click", function () {
     container.classList.add("togle");
 });
 
-document.querySelectorAll(".tombol").forEach((tumb) => {
-    tumb.addEventListener("click", function (e) {
-        const tumbs = document.querySelectorAll(".tombol");
-        tumbs.forEach((tumm) => {
-            tumm.classList.remove("bg-gray-600", "text-white");
-        });
+// document.querySelectorAll(".tombol").forEach((tumb) => {
+//     tumb.addEventListener("click", function (e) {
+//         const tumbs = document.querySelectorAll(".tombol");
+//         tumbs.forEach((tumm) => {
+//             tumm.classList.remove("bg-gray-600", "text-white");
+//         });
 
-        e.target.classList.add(
-            "focus:bg-gray-600",
-            "bg-gray-600",
-            "text-white"
-        );
-    });
-});
+//         e.target.classList.add(
+//             "focus:bg-gray-600",
+//             "bg-gray-600",
+//             "text-white"
+//         );
+//     });
+// });
 
 mobileMenu.addEventListener("click", function () {
     if (product.hasAttribute("hidden")) {
