@@ -6,10 +6,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BeritaPromoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CostumerController;
 
 
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [CostumerController::class, 'index'])->name('dashboard');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/data/product', [ProductController::class, 'dataProduct'])->name('data.product');
 Route::get('/product/kategori/{kategori}', [ProductController::class, 'kategori'])->name('product.kategori');
