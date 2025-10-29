@@ -9,7 +9,29 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     @vite(['resources/css/style.css', 'resources/js/app.js', 'resources/js/script.js'])
-
+<style>
+  
+    @media (max-width: 600px) {
+    .hero-section {
+         height: 600px;
+ background-image: url('/images/hero-mobile.svg');
+    }
+}
+    @media (min-width: 601px) {
+   .hero-section{
+        background-image: url('/images/hero-md.svg');
+      height: 500px;
+    }
+ 
+}
+    @media (min-width: 1024px) {
+   .hero-section{
+        background-image: url('/images/hero-lg.svg');
+      height: 680px;
+    }
+ 
+}
+</style>
 </head>
 
 <body class="p-8 w-auto">
