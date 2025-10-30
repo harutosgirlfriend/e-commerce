@@ -1,18 +1,30 @@
-const container = document.querySelector(".container");
-const keranjang = document.querySelector(".keranjang");
+
 const menu = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".toggle-products");
 const product = document.getElementById("products");
 const icon = document.querySelector(".icon-silang");
-icon.addEventListener("click", function () {
-    container.classList.toggle("togle");
-    keranjang.classList.remove("outline-2", "outline-indigo-500");
+
+
+const keranjangBtn = document.querySelector('.keranjang'); // Ganti dengan ID ikon keranjang Anda
+const keranjangContainer = document.getElementById('keranjang-container');
+const tutupBtn = keranjangContainer.querySelector('svg'); // Mengambil SVG ikon silang
+
+keranjangBtn.addEventListener("click", function () {
+    keranjangContainer.classList.remove('hidden');
+    setTimeout(() => {
+        keranjangContainer.classList.remove('translate-x-full');
+    }, 50); 
+ 
 });
 
-keranjang.addEventListener("click", function () {
-    keranjang.classList.add("outline-2", "outline-indigo-500");
-    container.classList.add("togle");
+tutupBtn.addEventListener("click", function () {
+    keranjangContainer.classList.add('translate-x-full');
+    setTimeout(() => {
+        keranjangContainer.classList.add('hidden');
+    }, 300); 
 });
+
+
 
 // document.querySelectorAll(".tombol").forEach((tumb) => {
 //     tumb.addEventListener("click", function (e) {

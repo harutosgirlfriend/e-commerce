@@ -3,11 +3,11 @@
 @section('title', 'Detail Produk')
 
 @section('content')
-    <div class="relative w-full lg:h-[500px] bg-cover bg-center hero-section block">
+    <div class="w-full lg:h-[500px] bg-cover bg-center hero-section">
 
         <div class="relative z-10  grid lg:grid-cols-2 h-full">
             <div class="card px-30 py-30">
-                <h1 class="text-4xl font-bold  text-[#a01800]">Wawan</h1>
+                <h1 class="text-4xl font-bold  text-[#a01800] wawan">Wawan</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis doloremque illo obcaecati animi in ut
                     tempore modi cum assumenda tempora accusantium perferendis quae incidunt enim, ea aliquid porro. Ipsa,
                     id.</p>
@@ -18,7 +18,7 @@
 
     </div>
     <div class="flex flex-col justify-center items-center ">
-        <h1 class="text-4xl font-bold mb-10  text-[#a01800]">Ada Apa Saja Disini?</h1>
+        <h1 class="text-4xl font-bold mb-10  text-[#a01800] ap-sj">Ada Apa Saja Disini?</h1>
         <div class="best-product flex flex-row justify-center gap-10 py-10 best-pro md:w-full">
        
             <div class="rounded-md bg- justify-items-center w-70 shadow-xl shadow-[#e4c6ba]/50 p-5 hover:scale-110 hover:cursor-pointer">
@@ -97,7 +97,7 @@
     </div>
 
     <div class="flex flex-col justify-center items-center p-10">
-        <h1 class="text-4xl font-bold text-[#a01800] mb-10">Top 4 Product</h1>
+        <h1 class="text-4xl font-bold text-[#a01800] mb-10 top-pro">Top 4 Product</h1>
         <div class="best-product flex flex-row justify-center gap-10 py-10 best-pro md:w-full">
        
             <div class="rounded-md bg- justify-items-center w-60 shadow-xl shadow-[#e4c6ba]/50 p-5 hover:scale-110 hover:cursor-pointer">
@@ -156,7 +156,7 @@
             </div>
           
        
-            <div class="rounded-md bg- justify-items-center w-60 shadow-xl shadow-[#e4c6ba]/50 p-5 hover:scale-110 hover:cursor-pointer">
+            <div class="rounded-md bg- justify-items-center w-60 shadow-xl shadow-[#e4c6ba]/50 p-5 hover:scale-110 hover:cursor-pointer slide-out">
 
                 <img src="{{ asset('../images/best-product2.jpg') }}" alt="" class="object-cover rounded w-70">
 

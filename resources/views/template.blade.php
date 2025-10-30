@@ -9,31 +9,54 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     @vite(['resources/css/style.css', 'resources/js/app.js', 'resources/js/script.js'])
-<style>
-  
-    @media (max-width: 600px) {
-    .hero-section {
-         height: 600px;
- background-image: url('/images/hero-mobile.svg');
-    }
-}
-    @media (min-width: 601px) {
-   .hero-section{
-        background-image: url('/images/hero-md.svg');
-      height: 500px;
-    }
- 
-}
-    @media (min-width: 1024px) {
-   .hero-section{
-        background-image: url('/images/hero-lg.svg');
-      height: 680px;
-    }
- 
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        @media (max-width: 600px) {
+            .hero-section {
+                height: 600px;
+                background-image: url('/images/hero-mobile.svg');
+            }
+        }
 
+        @media (min-width: 601px) {
+            .hero-section {
+                background-image: url('/images/hero-md.svg');
+                height: 500px;
+            }
 
-</style>
+        }
+
+        @media (min-width: 1024px) {
+            .hero-section {
+                background-image: url('/images/hero-lg.svg');
+                height: 680px;
+            }
+
+        }
+
+        .wawan {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+        .ap-sj,
+        .top-pro {
+            font-family: "Gravitas One", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .tombol {
+            font-family: "Gravitas One", serif;
+            font-weight: <weight>;
+            font-style: bold;
+        }
+    </style>
 </head>
 
 <body class="p-8 w-auto">
@@ -69,15 +92,15 @@
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                             <a href="{{ route('dashboard') }}" aria-current="page"
-                                class="rounded-md tombol px-3 py-2 text-sm font-medium  hover:text-white">Dashboard</a>
-                            <a href="{{ route('product') }}"  
-                                class="rounded-md tombol px-3 py-2 text-sm font-medium {{ request()->routeIs('product') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }}">Produk</a>
+                                class="rounded-md tombol px-3 py-2 text-md font-bold  hover:text-white text-[#a01800]">Dashboard</a>
+                            <a href="{{ route('product') }}"
+                                class="rounded-md tombol px-3 py-2 text-md font-bold {{ request()->routeIs('product') ? 'bg-gray-600 text-white' : 'text-[#a01800] hover:bg-white/5 hover:text-white' }}">Produk</a>
 
                             <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
 
                             <el-dropdown class="inline-block">
                                 <button
-                                    class="tombol px-3 py-2 inline-flex justify-center text-sm rounded-md font-medium {{ request()->routeIs('product.kategori') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }} hover:text-white">
+                                    class="tombol px-3 py-2 inline-flex justify-center text-md font-bold rounded-md {{ request()->routeIs('product.kategori') ? 'bg-gray-600 text-white' : 'text-[#a01800] hover:bg-white/5 hover:text-white' }} hover:text-white">
                                     Kategori
                                     <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
                                         class="-mr-1 size-5 text-gray-400 tombol">
@@ -91,13 +114,13 @@
                                     class="w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
                                     <div class="py-1">
                                         <a href="{{ route('product.kategori', ['kategori' => 'ayam hidup']) }}"
-                                          class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
+                                            class="block px-4 py-2 text-md font-bold text-[#a01800] focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
                                             Hidup</a>
                                         <a href="{{ route('product.kategori', ['kategori' => 'ayam potong']) }}"
-                                            class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
+                                            class="block px-4 py-2 text-md font-bold text-[#a01800] focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Ayam
                                             Potong</a>
                                         <a href="{{ route('product.kategori', ['kategori' => 'telur']) }}"
-                                            class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Telur
+                                            class="block px-4 py-2 text-md font-bold text-[#a01800] focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Telur
                                             Ayam</a>
                                     </div>
                                 </el-menu>
@@ -106,7 +129,7 @@
 
 
                             <a href="{{ route('beritapromo') }}"
-                                class="rounded-md tombol px-3 py-2 text-sm font-medium {{ request()->routeIs('beritapromo') ? 'bg-gray-600 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-white' }} hover:bg-white/5 hover:text-white">Berita
+                                class="rounded-md tombol px-3 py-2 text-md font-bold {{ request()->routeIs('beritapromo') ? 'bg-gray-600 text-white' : 'text-[#a01800] hover:bg-white/5 hover:text-white' }} hover:bg-white/5 hover:text-white">Berita
                                 & Promo</a>
                         </div>
                     </div>
@@ -155,7 +178,7 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                 <a href="#" aria-current="page"
                     class="tombol block rounded-md text-gray-900 hover:bg-gray-50 px-3 py-2 text-base font-medium text-gray-800 hover:text-white">Dashboard</a>
-                <button type="button" 
+                <button type="button"
                     class="toggle-products flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                     Product
                     <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
@@ -167,12 +190,15 @@
                 </button>
                 <div id="products" hidden class="mt-2 block space-y-2">
                     <a href="#"
-                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Ayam Hidup</a>
+                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Ayam
+                        Hidup</a>
                     <a href="#"
-                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Ayam Potong</a>
+                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Ayam
+                        Potong</a>
                     <a href="#"
-                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Telur Ayam</a>
-                   
+                        class="tombol block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-medium text-gray-800 hover:text-white">Telur
+                        Ayam</a>
+
                 </div>
                 <a href="#"
                     class="tombol block rounded-md px-3 py-2 text-base font-medium font-medium text-gray-800 hover:text-white">Kategori</a>
@@ -181,7 +207,8 @@
             </div>
         </el-disclosure>
     </nav>
-    <div class="container fixed top-25 right-0 hidden w-1/3 h-screen bg-white mx-10">
+    <div id="keranjang-container" class="fixed top-8 right-0 z-50 w-full md:w-1/3 h-screen bg-white 
+    shadow-2xl transform translate-x-full transition-transform duration-300 hidden">
         <div class="shadow-md rounded p-10  w-full">
             <div class="icon-silang flex justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -299,7 +326,7 @@
     </dialog>
   </el-dialog> --}}
 
- 
+
 
 
     {{-- <script src="{{ asset('js/script.js') }}"></script> --}}
