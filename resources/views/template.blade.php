@@ -85,10 +85,10 @@
                 </div>
                 <div class="flex flex-1 items-center justify-center  sm:items-stretch sm:justify-start">
                     <div class="flex shrink-0 items-center">
-                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company" class="h-8 w-auto" />
+                        <img src="{{ asset('../images/logo.png') }}"
+                            alt="Your Company" class="h-15 w-auto" />
                     </div>
-                    <div class="hidden sm:ml-6 lg:pl-60 sm:block">
+                    <div class="hidden sm:ml-6 lg:pl-60 h-15 lg:flex items-center sm:block">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                             <a href="{{ route('dashboard') }}" aria-current="page"

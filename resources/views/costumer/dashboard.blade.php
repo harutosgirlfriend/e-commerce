@@ -83,22 +83,24 @@
         </div>
     </div>
     <div
-        class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 items-center header-2 lg:h-[400px] w-full bg-cover bg-[#e4c6ba] shadow-xl shadow-[#e4c6ba]/70 rounded-md">
+        class="about header-2  w-full bg-cover bg-[#e4c6ba] shadow-xl shadow-[#e4c6ba]/70 rounded-md">
+<div class="aboutView grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:h-[400px] gap-2 items-center transform translate-y-full transition-transform duration-1000 hidden">
+     <p class="px-10 py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolorem sed iure nemo aliquam
+            illo eveniet nulla animi velit expedita, possimus maiores ipsum reprehenderit, sint, rerum cum consequuntur.
+            Dolor, iure?</p>
+
+        <img src="{{ asset('../images/animasi-ayam.gif') }}" alt="" class="object-cover rounded px-10 py-3 block mx-auto">
 
         <p class="px-10 py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolorem sed iure nemo aliquam
             illo eveniet nulla animi velit expedita, possimus maiores ipsum reprehenderit, sint, rerum cum consequuntur.
             Dolor, iure?</p>
-
-        <img src="{{ asset('../images/ayam.png') }}" alt="" class="object-cover rounded px-10 py-3 block mx-auto">
-
-        <p class="px-10 py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolorem sed iure nemo aliquam
-            illo eveniet nulla animi velit expedita, possimus maiores ipsum reprehenderit, sint, rerum cum consequuntur.
-            Dolor, iure?</p>
+</div>
+       
     </div>
 
     <div class="flex flex-col justify-center items-center p-10">
         <h1 class="text-4xl font-bold text-[#a01800] mb-10 top-pro">Top 4 Product</h1>
-        <div class="best-product flex flex-row justify-center gap-10 py-10 best-pro md:w-full">
+        <div class="best-product flex flex-row justify-center gap-10 py-10  md:w-full">
        
             <div class="rounded-md bg- justify-items-center w-60 shadow-xl shadow-[#e4c6ba]/50 p-5 hover:scale-110 hover:cursor-pointer">
 

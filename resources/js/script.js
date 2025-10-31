@@ -1,30 +1,45 @@
-
 const menu = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".toggle-products");
 const product = document.getElementById("products");
-const icon = document.querySelector(".icon-silang");
 
-
-const keranjangBtn = document.querySelector('.keranjang'); // Ganti dengan ID ikon keranjang Anda
-const keranjangContainer = document.getElementById('keranjang-container');
-const tutupBtn = keranjangContainer.querySelector('svg'); // Mengambil SVG ikon silang
+const keranjangBtn = document.querySelector(".keranjang"); // Ganti dengan ID ikon keranjang Anda
+const keranjangContainer = document.getElementById("keranjang-container");
+const tutupBtn = keranjangContainer.querySelector("svg"); // Mengambil SVG ikon silang
 
 keranjangBtn.addEventListener("click", function () {
-    keranjangContainer.classList.remove('hidden');
+    keranjangContainer.classList.remove("hidden");
     setTimeout(() => {
-        keranjangContainer.classList.remove('translate-x-full');
-    }, 50); 
- 
+        keranjangContainer.classList.remove("translate-x-full");
+    }, 50);
 });
 
 tutupBtn.addEventListener("click", function () {
-    keranjangContainer.classList.add('translate-x-full');
+    keranjangContainer.classList.add("translate-x-full");
     setTimeout(() => {
-        keranjangContainer.classList.add('hidden');
-    }, 300); 
+        keranjangContainer.classList.add("hidden");
+    }, 300);
 });
 
+const about = document.querySelector(".about");
+const aboutView = document.querySelector(".aboutView");
+const bestPro = document.querySelector(".best-pro");
 
+window.addEventListener("scroll", () => {
+    const posisi = about.getBoundingClientRect().top;
+    const tinggiLayar = window.innerHeight;
+
+    
+ 
+
+    if (posisi < tinggiLayar - 200) {
+        aboutView.classList.remove("hidden");
+        setTimeout(() => {
+            aboutView.classList.remove("translate-y-full");
+            aboutView.classList.add("translate-y-0");
+        }, 100);
+    }
+
+});
 
 // document.querySelectorAll(".tombol").forEach((tumb) => {
 //     tumb.addEventListener("click", function (e) {
@@ -58,9 +73,9 @@ document.querySelector(".tambah").addEventListener("click", function () {
 
     jumlahElement.innerHTML = jumlah;
 
-      const kode_product = savekeranjang.getAttribute("data-kode");
-        
-        formKeranjang.innerHTML += `
+    const kode_product = savekeranjang.getAttribute("data-kode");
+
+    formKeranjang.innerHTML += `
     <input type="hidden" value=${jumlah} name="jumlah">
     <input type="hidden" value=${kode_product} name="kode_product">`;
 });
@@ -75,24 +90,15 @@ document.querySelector(".kurangi").addEventListener("click", function () {
     jumlahElement.innerHTML = jumlah;
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // kode kamu di sini
 });
 
-
 savekeranjang.addEventListener("click", function (event) {
-    
     if (jumlah == 0) {
         alert("Masukkan jumlah terlebih dahulu");
         event.preventDefault();
-    
-    } 
-    if(jumlah !== 0){
-      
-
-
-
     }
-    
+    if (jumlah !== 0) {
+    }
 });
