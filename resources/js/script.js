@@ -22,7 +22,7 @@ tutupBtn.addEventListener("click", function () {
 
 const about = document.querySelector(".about");
 const aboutView = document.querySelector(".aboutView");
-const bestPro = document.querySelector(".best-pro");
+
 
 window.addEventListener("scroll", () => {
     const posisi = about.getBoundingClientRect().top;

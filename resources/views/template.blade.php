@@ -19,6 +19,7 @@
                 height: 600px;
                 background-image: url('/images/hero-mobile.svg');
             }
+         
         }
 
         @media (min-width: 601px) {

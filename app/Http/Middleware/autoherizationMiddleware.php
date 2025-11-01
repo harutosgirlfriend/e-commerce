@@ -19,7 +19,7 @@ class autoherizationMiddleware
 
         $auth = Auth::user();
         if($auth->role==='admin'){
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard.admin');
         }
         if($auth->role==='customer'){
             return redirect()->route('product');

@@ -9,7 +9,7 @@
         <div class="card">
             <div class="flex justify-between card-header !pb-0 !border-b-0">
                 <h5>Data Product</h5>
-                <button class="px-4 py-2 border bg-purple-300 hover:text-white transition">Tambah</button>
+                <button class="px-4 py-2 border-4 border-solid  bg-purple-300 rounded-md hover:text-white transition">Tambah</button>
             </div>
             <div class="card-body table">
 

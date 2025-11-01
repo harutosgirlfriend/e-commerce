@@ -1,6 +1,7 @@
 
-@media (max-width: 768px) {
-    .best-pro {
+
+@media (max-width: 600px) {
+    .best-pro, .best-product {
 
  flex-direction: column;
     }

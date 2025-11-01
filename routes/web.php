@@ -22,7 +22,7 @@ Route::get('/regis/save', [HomeController::class, 'regis'])->name('regis.save');
 Route::get('/login/view', [HomeController::class, 'loginView'])->name('login.view');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard/admin', [AdminController::class, 'dashboard'])->name('dashboard.admin');
 Route::get('/regis/akun', [AdminController::class, 'registrasi'])->name('regisAkun');
 
 Route::middleware(['auth', 'role.redirect'])->group(function () {
