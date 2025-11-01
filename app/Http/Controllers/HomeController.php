@@ -80,5 +80,15 @@ return view('admin.login');
     public function loginView(){
   return view('admin.login');
     }
+   public function logout(Request $request)
+    {
+        Auth::logout(); // 1️⃣ Logout user dari sesi
+
+        $request->session()->invalidate(); // 2️⃣ Hapus semua data sesi
+
+        $request->session()->regenerateToken(); // 3️⃣ Regenerasi token CSRF agar aman
+
+        return redirect('/')->with('status', 'Anda telah logout.'); // 4️⃣ Redirect ke halaman login
+    }
  
 }

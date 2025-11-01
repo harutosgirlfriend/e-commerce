@@ -85,8 +85,7 @@
                 </div>
                 <div class="flex flex-1 items-center justify-center  sm:items-stretch sm:justify-start">
                     <div class="flex shrink-0 items-center">
-                        <img src="{{ asset('../images/logo.png') }}"
-                            alt="Your Company" class="h-15 w-auto" />
+                        <img src="{{ asset('../images/logo.png') }}" alt="Your Company" class="h-15 w-auto" />
                     </div>
                     <div class="hidden sm:ml-6 lg:pl-60 h-15 lg:flex items-center sm:block">
                         <div class="flex space-x-4">
@@ -138,37 +137,44 @@
                     <button type="button" class="relative rounded-full p-1 text-gray-100 keranjang">
                         <span class="absolute -inset-1.5"></span>
                         <span class="sr-only">Lihat Keranjang</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#b25353" stroke-width="2"
                             data-slot="icon" aria-hidden="true" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M2.25 2.25h1.386c.51 0 .956.343 1.09.835l.383 1.435M7.5 14.25h9.75m-9.75 0L6 6.75h12.75a.75.75 0 0 1 .735.91l-1.5 6a.75.75 0 0 1-.735.59H7.5zm0 0L6 6.75m1.5 7.5L5.25 18a.75.75 0 0 0 .75 1h12a.75.75 0 0 0 .75-1l-2.25-3.75" />
                         </svg>
 
                     </button>
+                    @auth
+                        <el-dropdown class="relative ml-3">
+                            <button
+                                class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt=""
+                                    class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
+                            </button>
 
+                            <el-menu anchor="bottom end" popover
+                                class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Your
+                                    profile</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Settings</a>
+                                <a href="{{ route('logout') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Sign
+                                    out</a>
+                            </el-menu>
+                        </el-dropdown>
+                    @endauth
+                    @guest
+                           <a href="{{ route('login.view') }}"
+                                    class="text-[#b25353] px-6 py-3 block font-bold justify-self-center shadow-xl shadow-[#e4c6ba]/50">Login</a>
+                       
+                    @endguest
                     <!-- Profile dropdown -->
-                    <el-dropdown class="relative ml-3">
-                        <button
-                            class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">Open user menu</span>
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt=""
-                                class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
-                        </button>
 
-                        <el-menu anchor="bottom end" popover
-                            class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Your
-                                profile</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Settings</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Sign
-                                out</a>
-                        </el-menu>
-                    </el-dropdown>
                 </div>
             </div>
         </div>
@@ -207,7 +213,8 @@
             </div>
         </el-disclosure>
     </nav>
-    <div id="keranjang-container" class="fixed top-8 right-0 z-50 w-full md:w-1/3 h-screen bg-white 
+    <div id="keranjang-container"
+        class="fixed top-8 right-0 z-50 w-full md:w-1/3 h-screen bg-white 
     shadow-2xl transform translate-x-full transition-transform duration-300 hidden">
         <div class="shadow-md rounded p-10  w-full">
             <div class="icon-silang flex justify-between">
